@@ -33,6 +33,41 @@
  *          display balance;
  *      }
  */
+let balance = parseFloat(prompt("Enter Your Bank balance"));
+let transaction = prompt("Enter D for Deposit or W for withdrawl");
+
+if (transaction == "D" ||  transaction == "d") {
+    let amount = parseFloat(prompt("Enter amount to deposit "));
+    if (amount < 0){
+        display("Amounts can not be negative ");
+    }
+    else {
+        // Valid amount 
+        if (amount >= 10000) {
+            display("funds may be on hold for 3 days");
+        }
+        balance = balance + amount;
+        display("Balance is now  " + balance);
+    }
+}
+else if (transaction == "W" ||  transaction == "w") {
+    let amount = parseFloat(prompt("Enter amount to withdraw"));
+    if (amount < 0) {
+        display("Amounts can not be negative");
+    }
+    else if (amount > balance){
+        display("You can not withdraw more than your balance " + balance);
+    }
+    else {
+        display("withdraw succesful");
+        balance = balance - amount;
+        display("Your new balance is  " + balance);
+    }
+}
+else {
+    display("Invalid transaction :" + transaction);
+    display("Use D for deposit or W for withdrawl ");
+}
         </script>
     </body>
 </html>

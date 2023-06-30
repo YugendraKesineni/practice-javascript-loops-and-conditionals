@@ -27,6 +27,18 @@
  *         their balance.
  *   - Print a "Thank you for banking with us" message
  */
+            let balance = parseFloat(prompt("Enter Current amount "));
+            let amount = parseFloat(prompt("Enter amount to withdraw"));
+
+            if (amount <= balance) {
+                balance = balance - amount;
+                display("Your balance is now " + balance);
+            }
+            else {
+                display("Cannot withdraw money " + amount);
+                display("You have only " + balance + " in your account");
+            }
+            display("Thanks for banking");
 
         </script>
     </body>
